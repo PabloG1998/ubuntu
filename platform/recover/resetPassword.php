@@ -2,9 +2,9 @@
 header('Content-Type: application/json'); // Asegura que la respuesta sea JSON
 
 $host = "localhost";
-$user = "u810780627_ubuntudb";
-$password = "Ubuntu2020sql";
-$dbname = "u810780627_ubuntudb";
+$user = "root";
+$password = "";
+$dbname = "ubuntu";
 
 
 try {

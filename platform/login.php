@@ -1,20 +1,11 @@
 <?php 
 // Conexión a la base de datos
-//Hostinger
 
-$host = 'localhost';
-$dbname = 'u810780627_ubuntudb';
-$user = 'u810780627_ubuntudb';
-$password = 'Ubuntu2020sql';
-
-
-//Localhost
-/*
 $host = "localhost";
-$dbname = "ubuntudb";
+$dbname = "ubuntu";
 $user = "root";
 $password = "";
-*/
+
 // Crear conexión
 $conn = new mysqli($host, $user, $password, $dbname);
 

@@ -1,20 +1,11 @@
 <?php
 // conexion.php
 
-//Hostinger
-
-$host = 'localhost'; // Cambia según tu configuración
-$db = 'u810780627_ubuntudb'; // Cambia según tu base de datos
-$user = 'u810780627_ubuntudb'; // Cambia según tu usuario
-$pass = 'Ubuntu2020sql'; // Cambia según tu contraseña
-
-/*
 //Localhost
 $host = 'localhost';
-$db = "ubuntudb";
+$db = "ubuntu";
 $user = "root";
 $pass = "";
-*/
 $conn = new mysqli($host, $user, $pass, $db);
 
 if ($conn->connect_error) {

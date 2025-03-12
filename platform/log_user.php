@@ -1,17 +1,9 @@
 <?php
 // Conexión a la base de datos
-//Hostinger 
-
-$host = 'localhost';
-$dbname = 'u810780627_ubuntudb';
-$user = 'u810780627_ubuntudb';
-$password = 'Ubuntu2020sql';
-/*
-//Localhost
 // Configuración de la base de datos
 
 $host = 'localhost';
-$dbname = 'ubuntudb';
+$dbname = 'ubuntu';
 $user = 'root';
 $password = "";
 */

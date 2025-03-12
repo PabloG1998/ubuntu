@@ -1,20 +1,14 @@
 <?php
 class Database {
    
-  //Hostinger 
-   private $host = 'localhost';
-   private $dbname = 'u810780627_ubuntudb';
-   private $user = 'u810780627_ubuntudb';
-   private $password = 'Ubuntu2020sql';
    
-   public $conn;
-   //Localhost 
-   /*
    private $host = 'localhost';
-   private $dbname = 'ubuntudb';
+   private $dbname = 'ubuntu';
    private $user = 'root';
    private $password = '';
-   */
+   
+   public $conn;
+    
     public function getConnection() {
         $this->conn = null;
 

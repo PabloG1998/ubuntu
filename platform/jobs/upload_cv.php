@@ -1,9 +1,9 @@
 <?php
 // Conexión a la base de datos
 $servername = "localhost";
-$username = "u810780627_ubuntudb";
-$password = "Ubuntu2020sql";
-$dbname = "u810780627_ubuntudb";
+$username = "ubuntu";
+$password = "";
+$dbname = "ubuntu";
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);

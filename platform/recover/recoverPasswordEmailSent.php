@@ -1,8 +1,9 @@
 <?php
 // Conexión a la base de datos
+
 $host = 'localhost';
-$dbname = 'u810780627_ubuntudb';
-$user = 'u810780627_ubuntudb';
+$dbname = 'ubuntu';
+$user = 'root';
 $password = '';
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);

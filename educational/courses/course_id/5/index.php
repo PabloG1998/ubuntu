@@ -1,7 +1,7 @@
 <?php 
 $host = 'localhost';
-$dbname = 'u810780627_ubuntudb';
-$user = 'u810780627_ubuntudb';
+$dbname = 'ubuntu';
+$user = 'root';
 $password = '';
 
 // Crea la conexión

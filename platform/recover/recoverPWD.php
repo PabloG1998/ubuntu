@@ -1,9 +1,9 @@
 <?php
 // Conexión a la base de datos
 $host = "localhost";
-$user = "u810780627_ubuntudb";
-$password = "Ubuntu2020sql";
-$dbname = "u810780627_ubuntudb";
+$user = "root";
+$password = "";
+$dbname = "ubuntu";
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
