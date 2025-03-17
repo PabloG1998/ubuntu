@@ -90,27 +90,27 @@
               <form id="registerForm" action="reg_user.php" method="POST" onsubmit="return validateForm()">
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="text" id="nombre" name="nombre" class="form-control form-control-lg" required />
+                  <input type="text" id="nombre" name="nombre" class="form-control form-control-lg" required autocomplete="off" />
                   <label class="form-label" for="nombre">Nombre</label>
                 </div>
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="email" id="mail" name="email" class="form-control form-control-lg" required />
+                  <input type="email" id="mail" name="email" class="form-control form-control-lg" required autocomplete="off" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
                   <label class="form-label" for="mail">Mail</label>
                 </div>
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="password" id="password" name="password" class="form-control form-control-lg" required />
+                  <input type="password" id="password" name="password" class="form-control form-control-lg" required autocomplete="new-password"/>
                   <label class="form-label" for="password">Contraseña</label>
                 </div>
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="password" id="password-confirm" name="password-confirm" class="form-control form-control-lg" required />
+                  <input type="password" id="password-confirm" name="password-confirm" class="form-control form-control-lg" required autocomplete="new-password"/>
                   <label class="form-label" for="password-confirm">Confirmar Contraseña</label>
                 </div>
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="tel" id="phoneNumber" name="telefono" class="form-control form-control-lg" required />
+                  <input type="tel" id="phoneNumber" name="telefono" class="form-control form-control-lg" required autocomplete="off" pattern="^\+?\d{1,4}?\d{6,14}$"/>
                   <label class="form-label" for="phoneNumber">Teléfono</label>
                 </div>
 
@@ -171,25 +171,31 @@
 
 <!-- Validación en JavaScript -->
 <script>
+
+function sanitizedInput(input) {
+  const tempDiv = document.creatElement("div");
+  tempDiv.textContent = input;
+  return tempDiv.innerHTML;
+}
+
 function validateForm() {
-    var nombre = document.getElementById("nombre").value;
-    var email = document.getElementById("mail").value;
-    var password = document.getElementById("password").value;
-    var passwordConfirm = document.getElementById("password-confirm").value;
-    var telefono = document.getElementById("phoneNumber").value;
+  var nombre = sanitizedInput(document.getElementById("nombre").value);
+  var email = sanitizedInput(document.getElementById("mail").value);
+  var password = sanitizedInput(document.getElementById("password").value);
+  var passwordConfirm = sanitizedInput(document.getElementById("password-confirm").value);
+  var telefono = sanitizedInput(document.getElementById("phoneNumber").value);
 
-    if (password !== passwordConfirm) {
-        alert("Las contraseñas no coinciden.");
-        return false;
-    }
-
-    if (nombre && email && password && passwordConfirm && telefono) {
-        alert("Registro exitoso");
-        return true;
-    }
-
-    alert("Por favor, complete todos los campos.");
+  if (password != passwordConfirm) {
+    alert("Las contraseñas no coinciden");
     return false;
+  }
+
+  if (nombre && email && password && passwordConfirm && telefono) {
+    alert("Registro exitoso");
+    return true;
+ }
+ alert("Por favor, complete todos los campos");
+ return false;
 }
 </script>
 </html>

@@ -1,7 +1,7 @@
 <?php
 // Conexión a la base de datos
-
-//Localhost
+require '../vendor/autoload.php';
+// Localhost
 
 $host = 'localhost';
 $dbname = "ubuntu";
@@ -23,16 +23,27 @@ $password = $_POST['password'];
 $passwordConfirm = $_POST['password-confirm'];
 $telefono = $_POST['telefono'];
 
+// Santizar
+$nombre = htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8');
+$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+$telefono = preg_replace("/[^0-9]/", "", $telefono);
+
+// Validación de email
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    die("El correo electrónico no es válido");
+}
+
 // Validar los datos del formulario
 if (empty($nombre) || empty($email) || empty($password) || empty($passwordConfirm) || empty($telefono)) {
     die("Por favor, complete todos los campos.");
 }
 
+// Validación de las contraseñas
 if ($password !== $passwordConfirm) {
     die("Las contraseñas no coinciden.");
 }
 
-// Hashear la contraseña
+// Hashear la contraseña solo después de la validación
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 // Preparar y ejecutar la consulta para insertar el nuevo usuario
